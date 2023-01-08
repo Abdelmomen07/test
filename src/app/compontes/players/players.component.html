@@ -1,0 +1,8 @@
+<app-banner [title] = "'Players'"></app-banner>
+<div class="site-section">
+  <div class="container">
+    <div *ngFor = "let p of players" style="margin: 10px;">
+      <app-player [player]="p"> </app-player>
+    </div>
+  </div>
+</div>

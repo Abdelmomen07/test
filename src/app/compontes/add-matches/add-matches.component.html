@@ -1,0 +1,45 @@
+
+
+  
+  
+  
+      
+  
+<app-banner [title] = "titre"></app-banner>
+      
+      <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <form #addMatchForm="ngForm" (ngSubmit)="addEditMatch()">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="t1" [(ngModel)]="match.teamOne" placeholder="TeamOne">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="t2" [(ngModel)]="match.teamTwo" placeholder="TeamTwo">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="s1" [(ngModel)]="match.scoreOne" placeholder="ScoreOne">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="s2" [(ngModel)]="match.scoreTwo" placeholder="ScoreTwo">
+                </div>
+                <!--<div class="form-group">
+                  <input type="text" class="form-control" name="g1" [(ngModel)]="match.goalOne" placeholder="Goal Scorer For TeamOne">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="g2" [(ngModel)]="match.goalTwo" placeholder="Goal Scorer For TeamTwo">
+                </div>-->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary py-3 px-5"  > {{titre}}  </button>
+                </div>
+              </form>  
+            </div>
+            
+          </div>
+        </div>
+      </div>
+  
+  
+      
+  

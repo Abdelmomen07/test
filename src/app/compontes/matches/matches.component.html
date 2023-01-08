@@ -1,0 +1,10 @@
+<app-banner [title] = "'Matches'"></app-banner>
+<div class="container">
+      
+  <form>
+    <input type="text" [(ngModel)] = "term" name="a">
+  </form>
+  <div *ngFor = "let m of matches | filtre:term" style="margin: 150px;">
+    <app-match [match]="m" (idMatch)="deleteMatch($event)"></app-match>
+  </div>
+</div>

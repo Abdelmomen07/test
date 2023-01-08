@@ -1,0 +1,53 @@
+
+
+    <app-banner [title] = "'Sign Up'"></app-banner>
+  
+      
+      <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <form [formGroup]="signUpForm">
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+                </div>
+                <div class="text-danger" *ngIf="signUpForm.controls.firstName.invalid && (signUpForm.controls.firstName.dirty || signUpForm.controls.firstName.toutched )">
+                    <div  *ngIf="signUpForm.controls.firstName.errors?.minlength">minlength</div>
+                    <div  *ngIf="signUpForm.controls.firstName.errors?.required">Required</div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+                </div>
+                <div class="text-danger" *ngIf="signUpForm.controls.lastName.invalid && (signUpForm.controls.lastName.dirty || signUpForm.controls.lastName.toutched )">
+                  <div  *ngIf="signUpForm.controls.lastName.errors?.maxlength">maxlength</div>
+                  <div  *ngIf="signUpForm.controls.lastName.errors?.required">Required</div>
+              </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                </div>
+                <div class="text-danger" *ngIf="signUpForm.controls.email.invalid && (signUpForm.controls.email.dirty || signUpForm.controls.email.toutched )">
+                  <div  *ngIf="signUpForm.controls.email.errors?.email">Email Error</div>
+                  <div  *ngIf="signUpForm.controls.email.errors?.required">Required</div>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password">
+                </div>
+                <div class="text-danger" *ngIf="signUpForm.controls.confirmPassword.invalid && (signUpForm.controls.confirmPassword.dirty || signUpForm.controls.confirmPassword.toutched )">
+                  <div *ngIf="signUpForm.controls.confirmPassword.errors?.mustMatch">Not match</div>
+                </div>
+                <div class="form-group">
+                  <button type="button" [disabled]="signUpForm.invalid" class="btn btn-primary py-3 px-5" (click)="signUp(signUpForm.value)"> Sign Up </button>
+                </div>
+              </form>  
+            </div>
+            
+          </div>
+        </div>
+      </div>
+  
+  
+      
+  
